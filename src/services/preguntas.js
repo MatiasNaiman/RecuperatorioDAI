@@ -18,7 +18,7 @@ export default class PreguntasService
             return returnEntity;
         }
 
-        insert = async (pregunta) => {
+        insert = async (pregunta, FechaCreacion) => {
             let rowsAffected = null;
             console.log('Estoy en: Pregunta.insert');
             try {

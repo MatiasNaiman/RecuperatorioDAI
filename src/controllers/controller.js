@@ -37,14 +37,13 @@ router.put('/:id',  async(req, res) => {
 })
 
 router.post('/', async(req, res) => {
-    let  cuerpo = req.body;
-    console.log(cuerpo);
-    console.log('estoy en Insert');
-
     try{
-        let svc = new PreguntasService();
-    let pregunta  = await svc.insert(cuerpo);
-    res.send(pregunta);}
+        let  cuerpo = req.body;
+        console.log(cuerpo);
+        console.log('estoy en Insert');
+        let FechaCreacion = new Date();
+        let pregunta  = await PreguntasService.insert(cuerpo, FechaCreacion);
+        res.send(pregunta);}
     catch(error)
     {
         res.send("error");

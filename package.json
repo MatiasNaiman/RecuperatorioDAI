@@ -1,19 +1,25 @@
 {
-  "name": "recuperatoriodai",
+  "name": "pizza",
   "version": "1.0.0",
-  "description": "Recuperatorio Primer Cuatrimestre de DAI",
-  "main": "index.js",
+  "description": "node",
+  "main": "index-select.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "todo": "node index-select.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mati": "nodemon server.js",
+    "start": "node server.js"
   },
-  "author": "Matias Naiman",
+  "author": "phatu",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
-    "config": "^3.3.9",
+    "axios": "^1.4.0",
     "cors": "^2.8.5",
+    "country-currency-map": "^2.1.7",
     "dotenv": "^16.3.1",
+    "expres": "^0.0.5",
     "express": "^4.18.2",
-    "mssql": "^10.0.1",
-    "router": "^1.3.8"
+    "mssql": "^9.1.1",
+    "nodemon": "^2.0.22"
   }
 }

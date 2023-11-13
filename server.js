@@ -1,16 +1,13 @@
 import express from "express";
 import cors from "cors";
-import MedicamentosRouter from "./ControllerMedicamento.js";
-
+import PreguntasRouter from "././src/controllers/controller.js"
 
 const app  = express(); 
 const port = 3000; 
 app.use(cors());
 app.use(express.json());
-passport.use(jwtStrategy);
-app.use(passport.initialize());
 
-app.use("/api/medicamento/",MedicamentosRouter);
+app.use("/api/preguntas/",PreguntasRouter);
 
 
 app.use(express.static('public'));

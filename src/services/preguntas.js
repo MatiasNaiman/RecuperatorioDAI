@@ -24,17 +24,18 @@ export default class PreguntasService {
         let rowsAffected = null;
         console.log('Estoy en: Pregunta.insert');
         try {
+            console.log(pregunta)
             let pool = await sql.connect(config);
             let result = await pool.request()
-                .input('pPregunta', sql.Text, pregunta)
-                .input('pRespuesta1', sql.Text, Respuesta01)
-                .input('pRespuesta2', sql.Text, Respuesta02)
-                .input('pRespuesta3', sql.Text, Respuesta03)
-                .input('pRespuesta4', sql.Text, Respuesta04)
+                .input('pPregunta', sql.VarChar, pregunta)
+                .input('pRespuesta01', sql.VarChar, Respuesta01)
+                .input('pRespuesta02', sql.VarChar, Respuesta02)
+                .input('pRespuesta03', sql.VarChar, Respuesta03)
+                .input('pRespuesta04', sql.VarChar, Respuesta04)
                 .input('pRespuestaCorrecta', sql.Int, RespuestaCorrecta)
                 .input('pFechaCreacion', sql.DateTime, FechaCreacion)
 
-                .query('insert into Preguntas(Pregunta, Respuesta1, Respuesta2, Respuesta3, Respuesta4, RespuestaCorrecta, FechaCreacion) VALUES ( @pPregunta, @pRespuesta1, @pRespuesta2, @pRespuesta3, @pRespuesta4, @pRespuestaCorrecta, @pFechaCreacion)');
+                .query('INSERT INTO Preguntas(Pregunta, Respuesta01, Respuesta02, Respuesta03, Respuesta04, RespuestaCorrecta, FechaCreacion) VALUES ( @pPregunta, @pRespuesta01, @pRespuesta02, @pRespuesta03, @pRespuesta04, @pRespuestaCorrecta, @pFechaCreacion)');
             rowsAffected = result.rowsAffected;
         } catch (error) {
         }

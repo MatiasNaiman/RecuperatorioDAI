@@ -6,8 +6,8 @@
   "scripts": {
     "todo": "node index-select.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mati": "nodemon server.js",
-    "start": "node server.js"
+    "mati": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Mati",
   "license": "ISC",

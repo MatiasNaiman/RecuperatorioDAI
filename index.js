@@ -12,14 +12,15 @@ app.get("/api/preguntas/:id", async (req, res) => {
     try {
         let id = req.params.id
         let respuesta = req.query.respuesta
-        
+        console.log("el id es: ",id)
         let get = await svc.getById(id);
+        console.log("la pregunta es", get.pregunta)
         console.log("get")
         console.log(get)
         if (get != null && get != undefined) {
             res.status(200).send(get.RespuestaCorrecta == respuesta);
         } else {
-            res.status(404).send("La pregunta no existe");
+            res.status(404).send("No se encontro la pregunta");
         }
     } catch (error) {
         res.send("error");

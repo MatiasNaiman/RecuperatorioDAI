@@ -3,17 +3,25 @@ import sql from 'mssql';
 
 
 export default class PreguntasService {
+    getAll = async () => {
+        let allPreguntas = null;
+        try {
+            let pool = await sql.connect(config);
+            let result = await pool.request().query('SELECT * FROM Preguntas');
+            allPreguntas = result.recordsets[0];
+        } catch (error) {
+            console.error("Error en PreguntasService getAll:", error);
+        }
+        return allPreguntas;
+    }
+    
     getById = async (id)=> {
         let returnEntity = null;
         try {
             let pool = await sql.connect(config);
             let result = await pool.request()
             .input('pId' , sql.Int, id)
-            .query(`
-                SELECT * 
-                FROM Preguntas 
-                WHERE  id = @pId
-            `)
+            .query(`SELECT * FROM Preguntas WHERE id = @pId`)
             returnEntity = result.recordsets[0][0];
             } catch (error) {
             console.log(error)

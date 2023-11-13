@@ -9,7 +9,7 @@
     "mati": "nodemon server.js",
     "start": "node server.js"
   },
-  "author": "phatu",
+  "author": "Mati",
   "license": "ISC",
   "type": "module",
   "dependencies": {

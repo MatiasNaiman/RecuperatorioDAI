@@ -1,11 +1,13 @@
+import 'dotenv/config'
+
 const config = {
-    user    : 'Persona',
-    password: 'Persona',
-    server  : 'nombre de la pc',
-    database: 'Recuperatorio-DAI',
+    server : process.env.SERVER,
+    user : process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     options : {
-        trustServerCertificate  : true,
-        trustedConnection       : true
+        trustServerCertificate : true,
+        trustConnection : true
     }
 }
 export default config;

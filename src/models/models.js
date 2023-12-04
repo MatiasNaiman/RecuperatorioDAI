@@ -1,11 +1,10 @@
-class Pregunta{
+class Pelicula{
     Id;
-    Pregunta;
-    Respuesta01;
-    Respuesta02;
-    Respuesta03;
-    Respuesta04;
-    RespuestaCorrecta;
-    FechaCreacion;
+    Nombre;
+    Sinopsis;
+    DuracionEnMinutos;
+    Genero;
+    Director;
+    FechaEstreno;
 }
-export default Pregunta;
+export default Pelicula;
